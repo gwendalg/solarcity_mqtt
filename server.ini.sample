@@ -1,0 +1,16 @@
+[mqtt]
+client_name = <name of this client>
+username = <username for mqtt server>
+password = <password for mqtt server> 
+hostname = <server name>
+port = <port mqtt is listening to>
+ca_cert = <certficate>
+use311 = yes
+
+[data]
+path = <directory tcpflow is dumping the data>
+delete = <delete trace file after processing>
+source = <ip address of solarcity gateway, aaa.bbb.ccc.ddd>
+
+[logging]
+level = DEBUG
