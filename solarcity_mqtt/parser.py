@@ -55,12 +55,16 @@ def parser(filename):
     binaryReader = BinaryReader(filename)
     try:
         binaryReader.seek(220 + 19)
+        # Seconds since epoch.
         values['ts'] = binaryReader.read('uint32')
         binaryReader.seek(220 + 44)
+        # Current in mA.
         values['current'] = binaryReader.read('uint16')
         binaryReader.seek(220 + 54)
+        # Voltage in tenth of V.
         values['voltage'] = binaryReader.read('uint16')
         binaryReader.seek(220 + 68)
+        # Power in W.
         values['power'] = binaryReader.read('uint16')
     except BinaryReaderEOFException:
         # One of our attempts to read a field went beyond the end of the file.
